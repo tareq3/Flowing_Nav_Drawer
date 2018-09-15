@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Created by Tareq Islam on 9/15/18 11:35 AM
+  ~
+  ~  Last modified 9/15/18 11:35 AM
+  -->
+
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/nav_drawer_bg">
+
+    <android.support.design.widget.NavigationView
+        android:id="@+id/vNavigation"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_gravity="start"
+        android:background="@android:color/transparent"
+        app:headerLayout="@layout/drawer_header"
+        app:itemIconTint="@android:color/black"
+        app:itemTextColor="@android:color/white"
+        app:layout_constraintBottom_toTopOf="@+id/barrier"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:menu="@menu/drawer_menu" />
+
+    <FrameLayout
+        android:id="@+id/bottom_Drawer_Frame"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@drawable/nav_drawer_bottom"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <android.support.constraint.Barrier
+        android:id="@+id/barrier"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="44dp"
+        android:visibility="visible"
+        app:barrierDirection="top"
+        app:constraint_referenced_ids="bottom_Drawer_Frame"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+</android.support.constraint.ConstraintLayout>
